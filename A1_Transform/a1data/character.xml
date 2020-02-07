@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!-- hierachrical definition of a character -->
+<doc>
+    <node type="freejoint" name="root">
+    
+    	<node type="spherical" name="main body" position="0 0 0">
+    		
+    		<geom type="sphere" name="upper body" center="0 0 0" scale="1 1 2" color="1 0 0"/>
+    		<geom type="sphere" name="middle body" center="0 0.2 -1.9" scale="0.6 0.5 1" color="0.5 0 0"/>
+    		
+    		<node type="rotary" name="tip joint" position="0 0.2 -2.4" axis="1 0 0" min="-5" max="5">
+    			<geom type="cylinder" name="tip" center="0 0.1 -1.5" scale="0.6 3 0.3" color="0.5 1 0"/>
+    			<geom type="cylinder" name="tip" center="0 0.1 -4.6" scale="0.4 6 0.3" color="0.5 1 0"/>
+    			<geom type="sphere" name="tip end" center="0 0.1 -4.65" scale="0.15 0.15 0.15" color="1 0 0"/>
+    		</node>
+    	</node>
+    	
+    	<node type="rotary" name="wing left joint" position="-0.5 0.8 -0.5" axis="0 0 1" min="-30" max="45">
+    		<geom type="wing" name="wing left1" center="0 0 0" scale="1 1 1" color="0 0 1"/>
+    	</node>
+    	
+    	<node type="rotary" name="wing right joint" position="0.5 0.8 -0.5" axis="0 0 1" min="-30" max="45">
+    		<geom type="wing" name="wing right1" center="0 0 0" scale="-1 1 1" color="0 0 1"/>
+    	</node>
+    	
+    	<node type="spherical" name="head joint" position="0 0.5 1.4">
+    		<geom type="sphere" name="head" center="0 0 0.5" scale="1 1 1" color="0.7 1 0.2"/>
+    		
+    		<node type="spherical" name="eye left joint" position="-0.43 0.25 1.3">
+    			<geom type="sphere" name="eye left" center="0 0 0" scale="0.4 0.4 0.3" color="0.7 0 0.7"/>
+    			<node type="rotary" name="eye ball left joint x" position="0 0 0" axis="1 0 0" min="-30" max="30">
+    				<node type="rotary" name="eye ball left joint y" position="0 0 0" axis="0 1 0" min="-30" max="30">
+    					<geom type="sphere" name="eye ball left" center="0 0 0.3" scale="0.2 0.2 0.15" color="0.1 0.1 0.1"/>
+    				</node>
+    			</node>
+    		</node>
+    		
+    		<node type="spherical" name="eye right joint" position="0.43 0.25 1.3">
+    			<geom type="sphere" name="eye right" center="0 0 0" scale="0.4 0.4 0.3" color="0.7 0 0.7"/>
+    			<node type="rotary" name="eye ball right joint x" position="0 0 0" axis="1 0 0" min="-30" max="30">
+    				<node type="rotary" name="eye ball left joint y" position="0 0 0" axis="0 1 0" min="-30" max="30">
+    					<geom type="sphere" name="eye ball right" center="0 0 0.3" scale="0.2 0.2 0.15" color="0.1 0.1 0.1"/>
+    				</node>
+    			</node>
+    		</node>
+    	</node>
+    	
+    	<node type="spherical" name="leg front left joint" position="-0.5 -0.49 0.8">
+    		<geom type="box" name="leg1" center="-0.4 0 0" scale="0.8 0.1 0.1" color="0.3 0.6 0.87"/>
+    		<node type="rotary" name="leg front left inner joint" position="-0.8 0 0" axis="0 0 1" min="-90" max="15">
+    			<geom type="box" name="leg2" center="0 -0.5 0" scale="0.1 1 0.1" color="1 1 1"/>
+    		</node>
+    	</node>
+    	
+    	<node type="spherical" name="leg middle left joint" position="-0.5 -0.49 0">
+    		<geom type="box" name="leg1" center="-0.6 0 0" scale="1.2 0.1 0.1" color="0.3 0.6 0.87"/>
+    		<node type="rotary" name="leg middle left inner joint" position="-1.2 0 0" axis="0 0 1" min="-90" max="15">
+    			<geom type="box" name="leg2" center="0 -0.5 0" scale="0.1 1 0.1" color="1 1 1"/>
+    		</node>
+    	</node>
+    	
+    	<node type="spherical" name="leg back left joint" position="-0.5 -0.49 -0.7">
+    		<geom type="box" name="leg1" center="-0.5 0 0" scale="1 0.1 0.1" color="0.3 0.6 0.87"/>
+    		<node type="rotary" name="leg back left inner joint" position="-1 0 0" axis="0 0 1" min="-90" max="15">
+    			<geom type="box" name="leg2" center="0 -0.5 0" scale="0.1 1 0.1" color="1 1 1"/>
+    		</node>
+    	</node>
+    	
+    	<node type="spherical" name="leg front right joint" position="0.5 -0.49 0.8">
+    		<geom type="box" name="leg1" center="0.4 0 0" scale="0.8 0.1 0.1" color="0.3 0.6 0.87"/>
+    		<node type="rotary" name="leg front left inner joint" position="0.8 0 0" axis="0 0 1" min="-15" max="90">
+    			<geom type="box" name="leg2" center="0 -0.5 0" scale="0.1 1 0.1" color="1 1 1"/>
+    		</node>
+    	</node>
+    	
+    	<node type="spherical" name="leg middle right joint" position="0.5 -0.49 0">
+    		<geom type="box" name="leg1" center="0.6 0 0" scale="1.2 0.1 0.1" color="0.3 0.6 0.87"/>
+    		<node type="rotary" name="leg middle left inner joint" position="1.2 0 0" axis="0 0 1" min="-15" max="90">
+    			<geom type="box" name="leg2" center="0 -0.5 0" scale="0.1 1 0.1" color="1 1 1"/>
+    		</node>
+    	</node>
+    	
+    	<node type="spherical" name="leg back right joint" position="0.5 -0.49 -0.7">
+    		<geom type="box" name="leg1" center="0.5 0 0" scale="1 0.1 0.1" color="0.3 0.6 0.87"/>
+    		<node type="rotary" name="leg back left inner joint" position="1 0 0" axis="0 0 1" min="-15" max="90">
+    			<geom type="box" name="leg2" center="0 -0.5 0" scale="0.1 1 0.1" color="1 1 1"/>
+    		</node>
+    	</node>
+	</node>
+</doc>
